@@ -56,3 +56,10 @@ print(df_titles.head())
 df_titles.info()
 print(df_titles['category'].value_counts())
 df_titles.to_csv('./crawling_data/shopping_title{}.csv'.format(datetime.datetime.now().strftime('%Y%m%d')), index=False)
+
+
+
+search_box = driver.find_element('xpath',
+                                  '//*[@id="gnbCategory"]/div/div[1]/div[2]/nav/ul/li[1]/a')
+actions = wb.ActionChains(driver).move_to_element(search_box)
+actions.perform()
